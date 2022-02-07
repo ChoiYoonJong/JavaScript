@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> 배열 실습 문제2 </h1>
+	
+	다음 보기에 있는 문자열을 가지고 정답과 같이 만드세요. (별도의 문자열을 쓰면 안됨)<br>
+        그리고 출력 부분에 출력하도록 하면 됩니다.
+        정답 : "ejlove"
+	
+	<fieldset>
+    <legend>보기</legend>
+    	<label id="stringla1">j e</label><br>
+    	<label id="stringla2">e v o l</label><br>
+	</fieldset>
+	<br>
+    <p style="border:1px solid red;" id="print">이 부분에 정답이 출력 될 수 있도록 하세요</p>
+	<button onclick="reverseTest();">처리</button>
+	
+	<script>
+    	function reverseTest(){
+			var stringla1 = document.getElementById("stringla1").innerHTML.split(' '); // stringla1 에 있는 단어 정리
+            var stringla2 = document.getElementById("stringla2").innerHTML.split(' ');
+
+			var data1 = stringla1.reverse(); // stringla1 단어 반전 결과 j e , data1 에 srtingla1 변수 설정
+            var data2 = stringla2.reverse(); // 단어 반전 결과 l o v e , data2 에 stringla2 변수 설정
+
+            var arr = data1.concat(data2); //  data 2 에 있는 것을 data1 에 합친다. concat은 오리지널 값은 그대로 두고, 새로운 값이 생긴다.
+            var str = arr.join('');	// str 에 단어 join	
+            
+			//push() , concat() push는 오리지널 값이 아예 바뀌게한다 오리지널 데이터를 아예 변결할 것인지, 아니면 오리지널 데이터를 따로 두고 추가할 것인지 잘 판단을 해서 사용해야 한다.
+
+            document.getElementById("print").innerHTML = str; // 위에 str 단어를 print 하면서 결과가 나오게 한다.
+			
+
+    	}   
+    </script> 
+	
+	
+	
+</body>
+</html>
