@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃구조 연습1</title>
+    <style>
+        body{
+            color: rgb(253, 251, 247);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15pt;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #wrap{
+            width: 800px;
+            height: 500px;
+            background: rgb(255, 229, 172);
+        }
+
+        #header{
+            width: 800px;
+            height: 100px;
+            background:rgb(240, 196, 101) ;
+        }
+
+        #container{
+            width: 800px;
+            height: 300px;
+        }
+        #container #left{
+            float: left;
+            width: 150px;
+            height: 300px;
+            background: rgb(247, 221, 165);
+        }
+
+        #container #center{
+            float: left;
+            width: 500px;
+            height: 300px;
+            background: rgb(240, 201, 117);
+        }
+
+        #container #right{
+            float: left;
+            width: 150px;
+            height: 300px;
+            background: rgb(250, 214, 136);
+        }
+
+        #footer{
+            width: 800px;
+            height: 100px;
+            background: rgb(255, 229, 172);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap"><!--전체레이아웃-->
+        <div id="header">header</div> <!--header-->
+
+        <div id="container"> <!--내용-->
+            <div id="left">left</div>
+            <div id="center">center</div>
+            <div id="right">right</div>
+        </div>
+        
+        <div id="footer">footer</div> <!--말머리-->
+    </div>
+</body>
+</html>

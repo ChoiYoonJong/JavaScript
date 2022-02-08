@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃구조연습2</title>
+    <style>
+        body{
+            color: rgb(0, 0, 0);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20pt;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        div, form, input, img{
+            box-sizing: border-box;
+        }
+
+        .wrap{
+            width:100%;
+            height:800px;
+            margin:auto;
+        }
+
+        
+        .wrap>*{width:100%;}
+        #header{height:20%;}
+        #navigator{height:5%;}
+        #content{height:65%;}
+        #footer{height:10%;}
+
+        #header>div{height:100%; float:left;}
+        #header_1{width:20%; position:relative;}
+        #header_2{width:80%; position:relative;}
+        
+        
+        #header img{
+            width:99.93%;
+            height:100%;
+            position:absolute;
+            margin: auto;
+            top : 0;
+            bottom:0;
+            left: 0;
+            right: 0;
+        }
+
+        #navigator{
+            width: 100%;
+            height: 40px;
+            background: black;
+        }
+
+        #navi{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 100%;
+        }
+
+        #navi>li{
+            float: left;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+
+        }
+
+        #navi a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            font-weight: 900;
+            height: 100%;
+            display: block;
+            line-height: 35px;
+            background: black;
+        }
+
+        #navi a:hover{
+            color: rgb(150, 145, 144);
+        }
+
+        #navi>li>ul{
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+
+        #navi>li>a:hover+ul{
+            display: block;
+        }
+
+        #navi>li>ul:hover{
+            display: block;
+        }
+
+        #navi>li>ul>li>a{
+            font-size: 15px;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!--헤더-->
+        <div class="wrap">
+            <div id="header">
+                <div id="header_1">
+                    <a href="">
+                        <img src="../img/logo.jpg" alt="로고화면">
+                    </a>
+                </div>
+                <div id="header_2">
+                    <a href="">
+                        <img src="../img/mainlogo.jpg" alt="헤더화면">
+                    </a>
+                </div>
+                <div id="header_3"></div>
+            </div>
+        
+        <!--메뉴창-->
+        <div id="navigator">
+            <ul id = "navi">
+                <li><a href="">Home</a></li>
+                <li><a href="../레이아웃구조연습/resume.html">Profile</a></li>
+                <li><a href="">Portfolio</a>
+                    <ul>
+                        <li><a href="">Illustration artwork</a></li>
+                        <li><a href="">3D Works</a></li>
+                        <li><a href="">Code Works</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+
+        <!--내용및컨텐츠창-->
+        <div id="container">
+            <div id="Mcontent">Main content</div>
+            <div id="Rontent">content</div>
+        </div>
+
+        <!--말머리-->
+        <div id="footer">footer</div>
+
+    </div>
+</body>
+</html>

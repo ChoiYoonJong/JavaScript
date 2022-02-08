@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃구조연습2</title>
+    <style>
+        body{
+            color: rgb(255, 255, 255);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20pt;
+            text-align: center;
+            margin: 0 auto;
+        }
+        #wrap{
+            width: 100%;
+            height: 100%;
+            background: rgb(240, 185, 185);
+        }
+        #header{
+            width: 100%;
+            height: 150px;
+            background:rgb(241, 167, 167);
+        }
+
+        #Navigation{
+            width: 100%;
+            height: 70px;
+            background:rgb(243, 160, 160);
+        }
+        #container{
+            width: 100%;
+            height: 600px;
+        }
+
+        #container #Lcontent{
+            float: left;
+            width: 20%;
+            height: 600px;
+            background: rgb(245, 222, 222);
+        }
+
+        #container #Mcontent{
+            float: left;
+            width: 60%;
+            height: 600px;
+            background: rgb(243, 205, 205);
+        }
+
+        #container #Rontent{
+            float: left;
+            width: 20%;
+            height: 600px;
+            background: rgb(255, 224, 224);
+        }
+
+        #footer{
+            width: 100%;
+            height: 100px;
+            background: rgb(247, 241, 241);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!--헤더-->
+        <div id="header">Header</div>
+        
+        <!--메뉴창-->
+        <div id="Navigation">Navigation Menu</div>
+
+        <!--내용및컨텐츠창-->
+        <div id="container">
+            <div id="Lcontent">content</div>
+            <div id="Mcontent">Main content</div>
+            <div id="Rontent">content</div>
+        </div>
+
+        <!--말머리-->
+        <div id="footer">footer</div>
+
+    </div>
+</body>
+</html>
