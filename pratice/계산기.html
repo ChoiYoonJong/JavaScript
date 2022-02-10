@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+        table{
+            border: 5px dashed pink;
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+            border-radius: 20px;
+            background: url(../img/bear.jpg) no-repeat;
+            background: cover;
+            background-position-x: 200px;
+            background-position-y: 400px;
+        }
+
+        #resultFld{
+            border: 5px dashed rgb(236, 202, 202);
+            height: 150px;
+            width: 420px;
+            font-size: 80px;
+            font-weight: bold;
+            text-align: right;
+            border-radius: 16px;
+            background-color: white;
+        }
+        
+        
+        .function{
+            width: 100px;
+            height: 100px;
+            border: 5px dashed rgb(224, 202, 202);
+            border-radius: 35px;
+            background-color: plum;
+        }
+        
+        .number{
+            width: 100px;
+            height: 100px;
+            border: 5px dashed rgb(230, 185, 185);
+            border-radius: 35px;
+            box-shadow: pink;
+            background-color: pink;
+        }
+        .top{
+            background-color: rgb(255, 131, 152);
+        }
+        .mid{
+            background-color: rgb(253, 157, 173);
+        }
+        button:hover{
+            transform:scale(1.2);
+            font-size: 50px;
+            background-color: rgb(247, 229, 232);
+            background: url(../img/bear.jpg) no-repeat;
+            background-size: 10px;       
+        }
+
+        
+    </style>
+</head>
+<body>
+    <table>
+        
+        <tr>
+            <td colspan="4"><input type="text" id="resultFld"></td>
+            
+        </tr>
+        <tr>
+            <td><button class="function" id="left">(</button></td>
+            <td><button class="function" id="right">)</button></td>
+            <td><button class="function" id="percent" onclick="cal('%')">%</button></td>
+            <td><button class="function pul" id="action" value="AC" onclick="clear_del()">AC</button></td>
+        </tr>
+        <tr>
+            <td><button class="number top" id="seven" value="7" onclick="btn_click(7)">7</button></td>
+            <td><button class="number top" id="eight" value="8" onclick="btn_click(8)">8</button></td>
+            <td><button class="number top" id="nine" value="9" onclick="btn_click(9)">9</button></td>
+            <td><button class="function" id="deivde"  value="/" onclick="cal('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button class="number mid" id="four" value="4" onclick="btn_click(4)">4</button></td>
+            <td><button class="number mid" id="five" value="5" onclick="btn_click(5)">5</button></td>
+            <td><button class="number mid" id="six" value="6" onclick="btn_click(6)">6</button></td>
+            <td><button class="function" id="multiply"  value="*" onclick="cal('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button class="number row" id="one" value="1" onclick="btn_click(1)">1</button></td>
+            <td><button class="number row" id="two"  value="2" onclick="btn_click(2)">2</button></td>
+            <td><button class="number row" id="three" value="3" onclick="btn_click(3)">3</button></td>
+            <td><button class="function" id="minus" value="-" onclick="cal('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="number" id="zero" value="0" onclick="btn_click(0)">0</button></td>
+            <td><button class="function pul" id="dot" value="." onclick="btn_click('.')">.</button></td>
+            <td><button class="function pul" id="equal"  value="=" onclick="compute()">=</button></td>
+            <td><button class="function" id="plus" value="+" onclick="cal('+')">+</button></td>
+        </tr>
+    </table>
+    <script>
+        var num =0 ;
+        var symbol ;
+
+        function btn_click (a) {
+            resultFld.value += a;
+        }
+
+        function cal(b) {
+            var firstNum = (document.getElementById("resultFld").value);
+            num = firstNum;
+            symbol = b ;
+            return document.getElementById("resultFld").value = "";
+        }
+
+        function compute () {
+            var secNum = parseFloat(document.getElementById("resultFld").value);
+            var result ;
+            switch (symbol) {
+                case '+' : result = Number(num) + Number(secNum) ; 
+                document.getElementById("resultFld").value = result; 
+                break;
+                case '-' : result = Number(num) - Number(secNum) ; 
+                document.getElementById("resultFld").value = result;
+                break;
+                case '*' : result = Number(num) * Number(secNum) ; 
+                document.getElementById("resultFld").value = result;
+                break;
+                case '/' : result = Number(num) / Number(secNum) ; 
+                document.getElementById("resultFld").value = result;
+                break;
+                case '%' : result = Number(num) % Number(secNum) ; 
+                document.getElementById("resultFld").value = result;
+                break;
+            }        
+        }
+
+        function clear_del() {
+            document.getElementById("resultFld").value = "";
+            num = 0;
+        }
+        
+    </script>
+</body>
+</html>

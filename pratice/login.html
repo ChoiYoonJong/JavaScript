@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>	넥슨 회원로그인 </title>
+    <style>
+        #btNexon{
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper" class="layoutNexon">
+        <div class="header">
+            <h1 class="logo">
+                <a href="https://www.nexon.com/home/game"><span class="acchidden">NEXON</span></a>
+            </h1>
+        </div>
+        <div class="tab">
+            <ul>
+                <li class="btNexon">
+                    <button type="button">넥슨 ID로그인</button>
+                </li>
+                <li class="btOtp">
+                    <button type="button">일회용 로그인</button>
+                </li>
+                <li class="btQr">
+                    <button type="button">QR 로그인</button>
+                </li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="loginSec">
+                
+                <fieldset>
+                    <legend class="acchidden">넥슨ID 로그인</legend>
+                    <div class="id">
+                        <input type="text" class="input01" id="txtNexonID" placeholder="넥슨ID (아이디 또는 이메일)">
+                    </div>
+                    <div class="pass">
+                        <input type="password" class="input01" id="txtPWD" placeholder="비밀번호">
+                    </div>
+                    <p class="inputMsg password" style="display : none;">비밀번호를 입력해주세요.</p>
+                    <div class="saveid">
+                        <button type="checkbox" id="chkSaveID" a2s="click" obj="P_LOGIN" opt=""><label for="chkSaveID">넥슨ID저장</label></button>
+                    </div>
+                    <div class="btLogin">
+                        <buttom type="button" class="button01" a2s="click" obj="P_LOGIN" opt="">넥슨ID 로그인</buttom>
+                    </div>
+                </fieldset>
+            </div>
+            <p class="loginMenu">
+                <a href="#" class="join" a2s="capture" obj="PLOGIN">회원가입</a>
+                <a href="#" class="join" a2s="capture" obj="PLOGIN">넥슨ID 찾기</a>
+                <a href="#" class="join" a2s="capture" obj="PLOGIN">비밀번호 찾기</a>
+                <a href="https://security.nexon.com" a2s="capture" obj="P_LOGIN" opt="{&quot;Name&quot;:&quot;Security&quot;}" class="sec">보안센터</a>
+            </p>
+            <div class="tpa">
+                <button type="button" class="btFacebook" a2s="click" obj="P_LOGIN">
+                    <span class="icon"></span>
+                    "Facebook 로그인"
+                </button>
+            </div>
+            <div class="tpa">
+                <button type="button" class="btFacebook" a2s="click" obj="P_LOGIN">
+                    <span class="icon"></span>
+                    "Google 로그인"
+                </button>
+            </div>
+            <div class="tpa">
+                <button type="button" class="btFacebook" a2s="click" obj="P_LOGIN">
+                    <span class="icon"></span>
+                    "Naver 로그인"
+                </button>
+            </div>
+            <div class="tpa">
+                <button type="button" class="btFacebook" a2s="click" obj="P_LOGIN">
+                    <span class="icon"></span>
+                    "Apple 로그인"
+                </button>
+            </div>
+            <div class="tpa">
+                <button type="button" class="btFacebook" a2s="click" obj="P_LOGIN">
+                    <span class="icon"></span>
+                    "Nexon 로그인"
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
