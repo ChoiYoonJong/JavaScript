@@ -6,23 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>계산기</title>
     <style>
+        #wrap{
+            border: 10px double rgb(245, 153, 168);
+            border-radius: 30px;
+            width: 450px;
+        }
         table{
             border: 5px dashed pink;
             width: 100px;
             height: 100px;
             background-color: antiquewhite;
             border-radius: 20px;
-            background: url(../img/bear.jpg) no-repeat;
+            background: url(bear.jpg) no-repeat;
             background: cover;
             background-position-x: 200px;
             background-position-y: 400px;
         }
 
-        #resultFld{
-            border: 5px dashed rgb(236, 202, 202);
-            height: 150px;
+        #result{
+            border: 5px dotted rgb(243, 145, 145);
+            height: 130px;
             width: 420px;
-            font-size: 80px;
+            font-size: 35px;
             font-weight: bold;
             text-align: right;
             border-radius: 16px;
@@ -33,115 +38,99 @@
         .function{
             width: 100px;
             height: 100px;
-            border: 5px dashed rgb(224, 202, 202);
+            border: 5px dashed rgb(242, 139, 139);
             border-radius: 35px;
-            background-color: plum;
+            background: url(bear.jpg) no-repeat;
+            background-size: 10px;
         }
         
         .number{
             width: 100px;
             height: 100px;
-            border: 5px dashed rgb(230, 185, 185);
+            border: 5px dashed rgb(240, 196, 196);
             border-radius: 35px;
-            box-shadow: pink;
-            background-color: pink;
+            background: url(bear.jpg) no-repeat;
+            background-size: 10px;
         }
-        .top{
-            background-color: rgb(255, 131, 152);
-        }
-        .mid{
-            background-color: rgb(253, 157, 173);
-        }
+        
+        
         button:hover{
             transform:scale(1.2);
             font-size: 50px;
-            background-color: rgb(247, 229, 232);
-            background: url(../img/bear.jpg) no-repeat;
-            background-size: 10px;       
+            background: url(bear.jpg) no-repeat;
+            background-size: 100px;
+            
         }
+
 
         
     </style>
 </head>
 <body>
+    <div id="wrap">
     <table>
         
         <tr>
-            <td colspan="4"><input type="text" id="resultFld"></td>
+            <td colspan = 4><input type = "text" id = "result" value = "0" size="50"></td>
             
         </tr>
         <tr>
-            <td><button class="function" id="left">(</button></td>
-            <td><button class="function" id="right">)</button></td>
-            <td><button class="function" id="percent" onclick="cal('%')">%</button></td>
-            <td><button class="function pul" id="action" value="AC" onclick="clear_del()">AC</button></td>
+            <td><button class="function" id="left" value="(" onclick="addInput(this.value)">(</button></td>
+            <td><button class="function" id="right" value=")" onclick="addInput(this.value)">)</button></td>
+            <td><button class="function" id="percent" value="%"  onclick="addInput(this.value)">%</button></td>
+            <td><button class="function pul" id="action" value="AC" onclick="clearResult()">AC</button></td>
         </tr>
         <tr>
-            <td><button class="number top" id="seven" value="7" onclick="btn_click(7)">7</button></td>
-            <td><button class="number top" id="eight" value="8" onclick="btn_click(8)">8</button></td>
-            <td><button class="number top" id="nine" value="9" onclick="btn_click(9)">9</button></td>
-            <td><button class="function" id="deivde"  value="/" onclick="cal('/')">/</button></td>
+            <td><button class="number top" id="seven" value="7" onclick="addInput(this.value)">7</button></td>
+            <td><button class="number top" id="eight" value="8" onclick="addInput(this.value)">8</button></td>
+            <td><button class="number top" id="nine" value="9" onclick="addInput(this.value)">9</button></td>
+            <td><button class="function" id="deivde"  value="/"  onclick="addInput(this.value)">/</button></td>
         </tr>
         <tr>
-            <td><button class="number mid" id="four" value="4" onclick="btn_click(4)">4</button></td>
-            <td><button class="number mid" id="five" value="5" onclick="btn_click(5)">5</button></td>
-            <td><button class="number mid" id="six" value="6" onclick="btn_click(6)">6</button></td>
-            <td><button class="function" id="multiply"  value="*" onclick="cal('*')">x</button></td>
+            <td><button class="number mid" id="four" value="4"  onclick="addInput(this.value)">4</button></td>
+            <td><button class="number mid" id="five" value="5" onclick="addInput(this.value)">5</button></td>
+            <td><button class="number mid" id="six" value="6" onclick="addInput(this.value)">6</button></td>
+            <td><button class="function" id="multiply"  value="*" onclick="addInput(this.value)">x</button></td>
         </tr>
         <tr>
-            <td><button class="number row" id="one" value="1" onclick="btn_click(1)">1</button></td>
-            <td><button class="number row" id="two"  value="2" onclick="btn_click(2)">2</button></td>
-            <td><button class="number row" id="three" value="3" onclick="btn_click(3)">3</button></td>
-            <td><button class="function" id="minus" value="-" onclick="cal('-')">-</button></td>
+            <td><button class="number row" id="one" value="1" onclick="addInput(this.value)">1</button></td>
+            <td><button class="number row" id="two"  value="2" onclick="addInput(this.value)">2</button></td>
+            <td><button class="number row" id="three" value="3" onclick="addInput(this.value)">3</button></td>
+            <td><button class="function" id="minus" value="-" onclick="addInput(this.value)">-</button></td>
         </tr>
         <tr>
-            <td><button class="number" id="zero" value="0" onclick="btn_click(0)">0</button></td>
-            <td><button class="function pul" id="dot" value="." onclick="btn_click('.')">.</button></td>
-            <td><button class="function pul" id="equal"  value="=" onclick="compute()">=</button></td>
-            <td><button class="function" id="plus" value="+" onclick="cal('+')">+</button></td>
+            <td><button class="number" id="zero" value="0" onclick="addInput(this.value)">0</button></td>
+            <td><button class="function pul" id="dot" value="."  onclick="addInput(this.value)">.</button></td>
+            <td><button class="function pul" id="equal"  value="=" onclick="calculate()">=</button></td>
+            <td><button class="function" id="plus" value="+" onclick="addInput(this.value)">+</button></td>
         </tr>
     </table>
+    </div>
     <script>
-        var num =0 ;
-        var symbol ;
-
-        function btn_click (a) {
-            resultFld.value += a;
+        function addInput(b) // 숫자,기호 출력
+        {
+            let result = document.getElementById("result");
+            if(result.value=="0") // 초기값
+            {
+                result.value=b;
+            }
+            else
+            {
+                result.value += b; //출력 버튼문자 
+            }
+        }
+    
+        function calculate()
+        {
+            let result = document.getElementById("result");
+            result.value = eval(result.value);
+        }
+        function clearResult()
+        {
+            let result = document.getElementById("result");
+            result.value = "0";
         }
 
-        function cal(b) {
-            var firstNum = (document.getElementById("resultFld").value);
-            num = firstNum;
-            symbol = b ;
-            return document.getElementById("resultFld").value = "";
-        }
-
-        function compute () {
-            var secNum = parseFloat(document.getElementById("resultFld").value);
-            var result ;
-            switch (symbol) {
-                case '+' : result = Number(num) + Number(secNum) ; 
-                document.getElementById("resultFld").value = result; 
-                break;
-                case '-' : result = Number(num) - Number(secNum) ; 
-                document.getElementById("resultFld").value = result;
-                break;
-                case '*' : result = Number(num) * Number(secNum) ; 
-                document.getElementById("resultFld").value = result;
-                break;
-                case '/' : result = Number(num) / Number(secNum) ; 
-                document.getElementById("resultFld").value = result;
-                break;
-                case '%' : result = Number(num) % Number(secNum) ; 
-                document.getElementById("resultFld").value = result;
-                break;
-            }        
-        }
-
-        function clear_del() {
-            document.getElementById("resultFld").value = "";
-            num = 0;
-        }
         
     </script>
 </body>
